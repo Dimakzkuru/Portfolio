@@ -31,6 +31,20 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
+      keyframes: {
+        fadeRight: {
+          "0%": { opacity: "0", transform: "translateX(-20px)", scale: "0.9" },
+          "100%": { opacity: "1", transform: "translateX(0)", scale: "1" },
+        },
+        fadeLeft: {
+          "0%": { opacity: "0", transform: "translateX(20px)", scale: "0.9" },
+          "100%": { opacity: "1", transform: "translateX(0)", scale: "1" },
+        },
+      },
+      animation: {
+        fadeRight: "fadeRight 1.5s",
+        fadeLeft: "fadeLeft 1.5s",
+      },
     },
   },
   variants: {

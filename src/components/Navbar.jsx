@@ -22,34 +22,34 @@ const Navbar = () => {
         <img
           src={isDark ? whiteLogo : blackLogo}
           alt="Logo"
-          className="size-28 mr-10"
+          className="size-28 mr-10 animate-fadeRight"
         />
       </div>
       <div className="flex items-center justify-center gap-10 m-8">
         <a
           href="#"
-          className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red"
+          className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
         >
           <HiOutlineHome className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           Home
         </a>
         <a
           href="#"
-          className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red"
+          className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
         >
           <GoPerson className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           About
         </a>
         <a
           href="#"
-          className="relative link text-lg font-semibold justify-center px-5 items-center flex  hover:text-red"
+          className="relative link text-lg font-semibold justify-center px-5 items-center flex  hover:text-red animate-fadeLeft"
         >
           <HiOutlinePresentationChartLine className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           Works
         </a>
         <a
           href="#"
-          className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red"
+          className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
         >
           <BiSolidContact className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           Contact
