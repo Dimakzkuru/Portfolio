@@ -33,17 +33,22 @@ export default {
       },
       keyframes: {
         fadeRight: {
-          "0%": { opacity: "0", transform: "translateX(-20px)", scale: "0.9" },
+          "0%": { opacity: "0", transform: "translateX(-20px)", scale: "0.7" },
           "100%": { opacity: "1", transform: "translateX(0)", scale: "1" },
         },
         fadeLeft: {
-          "0%": { opacity: "0", transform: "translateX(20px)", scale: "0.9" },
+          "0%": { opacity: "0", transform: "translateX(20px)", scale: "0.7" },
           "100%": { opacity: "1", transform: "translateX(0)", scale: "1" },
+        },
+        fadeDown: {
+          "0%": { opacity: "0", transform: "translateY(-20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        fadeRight: "fadeRight 1.5s",
+        fadeRight: "fadeRight 1s",
         fadeLeft: "fadeLeft 1.5s",
+        fadeDown: "fadeDown 1s",
       },
     },
   },

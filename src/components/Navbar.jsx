@@ -25,7 +25,7 @@ const Navbar = () => {
           className="size-28 mr-10 animate-fadeRight"
         />
       </div>
-      <div className="flex items-center justify-center gap-10 m-8">
+      <div className="flex items-center justify-center gap-10 m-1">
         <a
           href="#"
           className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
@@ -57,7 +57,7 @@ const Navbar = () => {
 
         <button
           onClick={toggleTheme}
-          className="transition duration-0.5 ease-in-out "
+          className="transition duration-0.5 ease-in-out animate-fadeDown"
         >
           {isDark ? (
             <MdDarkMode className="hover:cursor-pointer text-2xl transition duration-5000 ease-in-out" />
