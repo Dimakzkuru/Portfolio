@@ -1,7 +1,7 @@
 import Typewriter from "typewriter-effect";
 const Type = () => {
   return (
-    <div className="text-bold text-red-800 text-2xl mb-10">
+    <div className="font-bold text-red text-xl mb-5">
       <Typewriter
         options={{
           strings: ["Frontend Web Developer"],

@@ -20,35 +20,35 @@ const Navbar = () => {
     <nav className="mb-20 flex items-center justify-between py-6 ">
       <div className="flex flex-shrink-0 items-center">
         <img
-          src={isDark ? whiteLogo : blackLogo}
+          src={isDark ? blackLogo : whiteLogo}
           alt="Logo"
           className="size-28 mr-10 animate-fadeRight"
         />
       </div>
       <div className="flex items-center justify-center gap-10 m-1">
         <a
-          href="#"
+          href="#Home"
           className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
         >
           <HiOutlineHome className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           Home
         </a>
         <a
-          href="#"
+          href="#About"
           className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
         >
           <GoPerson className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           About
         </a>
         <a
-          href="#"
+          href="#Works"
           className="relative link text-lg font-semibold justify-center px-5 items-center flex  hover:text-red animate-fadeLeft"
         >
           <HiOutlinePresentationChartLine className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           Works
         </a>
         <a
-          href="#"
+          href="#Contact"
           className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
         >
           <BiSolidContact className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
@@ -62,7 +62,7 @@ const Navbar = () => {
           {isDark ? (
             <MdDarkMode className="hover:cursor-pointer text-2xl transition duration-5000 ease-in-out" />
           ) : (
-            <LuSun className="text-2xl hover:cursor-pointer" />
+            <LuSun className="hover:cursor-pointer text-2xl " />
           )}
         </button>
       </div>
