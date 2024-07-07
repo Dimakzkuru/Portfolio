@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.3",
+    "framer-motion": "^11.2.13",
+    "install": "^0.13.0",
+    "npm": "^10.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
