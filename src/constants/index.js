@@ -1,3 +1,6 @@
+import project1 from "../assets/projects/todolistapp.jpg";
+import project2 from "../assets/projects/djobwebsite.jpg";
+import project3 from "../assets/projects/portfolio.jpg";
 export const HERO_CONTENT = `I'm a self-taught front-end developer with a passion for building engaging and user-friendly web applications. My curiosity drives me to create intuitive and visually appealing interfaces that enhance user experiences.`;
 
 export const ABOUT_TEXT =
@@ -36,30 +39,25 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
-
+    title: "ToDoList App",
+    image: project1,
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+      "A simple ToDoList Application built using React and styled with Tailwind CSS. It allows users to create, edit, and delete tasks, as well as mark tasks as completed.",
+    technologies: ["HTML", "React", "Tailwind"],
   },
   {
+    title: "D-Job Website",
+    image: project2,
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+      "This is a website project built to help job seekers connect with potential employers by providing a platform for job listings, applications, and related services.",
+    technologies: ["HTML", "CSS", "Javascript"],
   },
   {
     title: "Portfolio Website",
-
+    image: project3,
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
-  },
-  {
-    title: "Blogging Platform",
-
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+    technologies: ["HTML", "React", "Tailwind"],
   },
 ];
 

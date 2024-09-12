@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import { motion } from "framer-motion";
+import Projects from "./components/Projects";
 const App = () => {
   return (
     <div className="overflow-x-hidden dark:text-black text-white">
@@ -14,6 +15,7 @@ const App = () => {
         <Navbar />
         <Hero />
         <About />
+        <Projects />
       </motion.div>
     </div>
   );

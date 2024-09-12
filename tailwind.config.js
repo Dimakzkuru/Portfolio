@@ -27,6 +27,7 @@ export default {
         "gray-500": "#a0a0a0",
         white: "#ffffff",
         red: "#FB5936",
+        primary: "var(--primary-color)",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -69,7 +70,7 @@ export default {
             width: "0",
             left: "0",
             bottom: "-10px",
-            backgroundColor: "#FB5936",
+            backgroundColor: "#35B855",
             transition: "width 0.3s",
           },
           ".link:hover:after": {

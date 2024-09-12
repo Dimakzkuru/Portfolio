@@ -28,28 +28,28 @@ const Navbar = () => {
       <div className="flex items-center justify-center gap-10 m-1">
         <a
           href="#Home"
-          className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
+          className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400 animate-fadeLeft"
         >
           <HiOutlineHome className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           Home
         </a>
         <a
           href="#About"
-          className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
+          className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400 animate-fadeLeft"
         >
           <GoPerson className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           About
         </a>
         <a
           href="#Works"
-          className="relative link text-lg font-semibold justify-center px-5 items-center flex  hover:text-red animate-fadeLeft"
+          className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400 animate-fadeLeft"
         >
           <HiOutlinePresentationChartLine className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           Works
         </a>
         <a
           href="#Contact"
-          className="relative link text-lg font-semibold justify-center px-5 items-center flex hover:text-red animate-fadeLeft"
+          className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400 animate-fadeLeft"
         >
           <BiSolidContact className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
           Contact
