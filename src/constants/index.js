@@ -1,6 +1,7 @@
 import project1 from "../assets/projects/todolistapp.jpg";
 import project2 from "../assets/projects/djobwebsite.jpg";
 import project3 from "../assets/projects/portfolio.jpg";
+
 export const HERO_CONTENT = `I'm a self-taught front-end developer with a passion for building engaging and user-friendly web applications. My curiosity drives me to create intuitive and visually appealing interfaces that enhance user experiences.`;
 
 export const ABOUT_TEXT =
@@ -57,7 +58,7 @@ export const PROJECTS = [
     image: project3,
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "React", "Tailwind"],
+    technologies: ["HTML", "React", "Tailwind", "Framer Motion"],
   },
 ];
 
