@@ -53,9 +53,9 @@ const Navbar = () => {
       <nav
         className={`${
           isSticky
-            ? "sticky-nav shadow-lg bg-slate-700 dark:bg-white text-black "
+            ? "sticky-nav shadow-lg  dark:bg-white dark:text-black backdrop-blur-lg"
             : ""
-        } mb-20 flex items-center justify-between py-6 mx-auto px-8 z-10 `}
+        } mb-20 flex items-center justify-between  mx-auto px-8 z-10 `}
       >
         <motion.div
           initial={{ opacity: 0, y: -100 }}
