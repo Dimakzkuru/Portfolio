@@ -4,7 +4,7 @@ import heroPhoto from "../assets/HeroPhoto.png";
 import { motion } from "framer-motion";
 const Hero = () => {
   return (
-    <div className="pb-28 lg:mb-60">
+    <div className="">
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col">
@@ -13,7 +13,7 @@ const Hero = () => {
               whileInView={{
                 opacity: 1,
                 x: 0,
-                transition: { delay: 0.4, duration: 1 },
+                transition: { delay: 0.7, duration: 1.2 },
               }}
             >
               <Type className="text-green-600" />
@@ -23,7 +23,7 @@ const Hero = () => {
               whileInView={{
                 opacity: 1,
                 x: 0,
-                transition: { delay: 0.2, duration: 1 },
+                transition: { delay: 1.1, duration: 0.8 },
               }}
               className="pb-2 text-5xl font-bold tracking-tight lg:text-5xl"
             >
@@ -39,7 +39,7 @@ const Hero = () => {
               whileInView={{
                 opacity: 1,
                 x: 0,
-                transition: { delay: 0.8, duration: 1 },
+                transition: { delay: 1.4, duration: 0.8 },
               }}
               className="mt-16 text-lg"
             >
@@ -57,7 +57,11 @@ const Hero = () => {
             }}
             className="flex justify-center"
           >
-            <img src={heroPhoto} alt="profilePic" className="size-9/12 top-2" />
+            <img
+              src={heroPhoto}
+              alt="profilePic"
+              className="size-9/12 top-2 lg:ml-52"
+            />
           </motion.div>
         </div>
       </div>

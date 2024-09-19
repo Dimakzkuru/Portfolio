@@ -7,10 +7,10 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { FaGithub, FaCss3Alt, FaHtml5, FaReact } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { GoPerson } from "react-icons/go";
-import { FaPhoneVolume } from "react-icons/fa6";
+
 import { CiMail } from "react-icons/ci";
 import { FaHome } from "react-icons/fa";
-
+import { FaUserGraduate } from "react-icons/fa6";
 const About = () => {
   const [activeButton, setActiveButton] = useState("skills");
 
@@ -44,7 +44,7 @@ const About = () => {
     }),
   };
   return (
-    <div className=" border-white dark:border-neutral-900 pb-4 lg:mb-36">
+    <div className=" border-white dark:border-neutral-900">
       <motion.h2
         initial={{ opacity: 0, y: -100 }}
         whileInView={{
@@ -52,7 +52,7 @@ const About = () => {
           y: 0,
           transition: { delay: 0.4, duration: 2 },
         }}
-        className="mt-20 mb-40 flex items-center justify-center
+        className="mt-20 mb-20 flex items-center justify-center
        text-2xl font-bold"
       >
         <BsPersonCircle className="mr-2" />
@@ -138,8 +138,11 @@ const About = () => {
                   <h3>Michael Dy Dimakiling</h3>
                 </div>
                 <div className="flex flex-row text-center items-center gap-2 mb-2">
-                  <FaPhoneVolume className="text-green-600 text-lg" />
-                  <h3>09971441145</h3>
+                  <FaUserGraduate className="text-green-600 text-lg" />
+                  <h3>
+                    Bachelors of Science in
+                    <br></br>Electronics Engineering
+                  </h3>
                 </div>
                 <div className="flex flex-row text-center items-center gap-2 mb-2">
                   <CiMail className="text-green-600 text-lg" />

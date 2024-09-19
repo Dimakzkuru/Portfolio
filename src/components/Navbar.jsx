@@ -14,6 +14,22 @@ const Navbar = () => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme === "dark";
   });
+
+  const toggleTheme = () => {
+    const newTheme = !isDark ? "dark" : "light";
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    localStorage.setItem("theme", newTheme);
+    setIsDark((prevDark) => !prevDark);
+  };
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDark]);
+  // Sticky Navigation Bar
   const [isSticky, setIsSticky] = useState(false);
   const navRef = useRef(null);
   useEffect(() => {
@@ -32,20 +48,16 @@ const Navbar = () => {
     };
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = !isDark ? "dark" : "light";
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-    localStorage.setItem("theme", newTheme);
-    setIsDark((prevDark) => !prevDark);
-  };
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
     }
-  }, [isDark]);
+  };
 
   return (
     <>
@@ -53,16 +65,16 @@ const Navbar = () => {
       <nav
         className={`${
           isSticky
-            ? "sticky-nav shadow-lg  dark:bg-white dark:text-black backdrop-blur-lg"
+            ? "sticky-nav shadow-lg  dark:text-black backdrop-blur-lg"
             : ""
-        } mb-20 flex items-center justify-between  mx-auto px-8 z-10 `}
+        } flex items-center justify-between  mx-auto px-8 z-10 h-20 `}
       >
         <motion.div
           initial={{ opacity: 0, y: -100 }}
           animate={{
             opacity: 1,
             y: 0,
-            transition: { delay: 0.4, duration: 2 },
+            transition: { delay: 0.4, duration: 1.5 },
           }}
           className="flex flex-shrink-0 items-center"
         >
@@ -73,65 +85,65 @@ const Navbar = () => {
           />
         </motion.div>
         <div className="flex items-center justify-center gap-10 m-1">
-          <motion.a
+          <motion.button
             initial={{ opacity: 0, y: -100 }}
             animate={{
               opacity: 1,
               y: 0,
-              transition: { delay: 0.4, duration: 2 },
+              transition: { delay: 0.4, duration: 1.5 },
             }}
-            href="#Home"
+            onClick={() => handleScroll("home")}
             className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400"
           >
             <HiOutlineHome className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
             Home
-          </motion.a>
-          <motion.a
+          </motion.button>
+          <motion.button
             initial={{ opacity: 0, y: -100 }}
             animate={{
               opacity: 1,
               y: 0,
-              transition: { delay: 0.4, duration: 2 },
+              transition: { delay: 0.4, duration: 1.5 },
             }}
-            href="#About"
+            onClick={() => handleScroll("about")}
             className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400"
           >
             <GoPerson className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
             About
-          </motion.a>
-          <motion.a
+          </motion.button>
+          <motion.button
             initial={{ opacity: 0, y: -100 }}
             animate={{
               opacity: 1,
               y: 0,
-              transition: { delay: 0.4, duration: 2 },
+              transition: { delay: 0.4, duration: 1.5 },
             }}
-            href="#Works"
+            onClick={() => handleScroll("projects")}
             className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400"
           >
             <HiOutlinePresentationChartLine className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
             Works
-          </motion.a>
-          <motion.a
+          </motion.button>
+          <motion.button
             initial={{ opacity: 0, y: -100 }}
             animate={{
               opacity: 1,
               y: 0,
-              transition: { delay: 0.4, duration: 2 },
+              transition: { delay: 0.4, duration: 1.5 },
             }}
-            href="#Contact"
+            onClick={() => handleScroll("contact")}
             className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400"
           >
             <BiSolidContact className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
             Contact
-          </motion.a>
+          </motion.button>
 
           <motion.button
             initial={{ opacity: 0, y: -100 }}
             animate={{
               opacity: 1,
               y: 0,
-              transition: { delay: 0.4, duration: 2 },
+              transition: { delay: 0.4, duration: 1.5 },
             }}
             onClick={toggleTheme}
           >

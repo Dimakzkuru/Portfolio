@@ -2,7 +2,7 @@ import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
 const Projects = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:pt-24">
+    <div className="border-b border-neutral-900">
       <motion.h2
         initial={{ opacity: 0, y: -100 }}
         whileInView={{
@@ -10,7 +10,7 @@ const Projects = () => {
           y: 0,
           transition: { delay: 0.4, duration: 2 },
         }}
-        className="my-28 text-center text-2xl font-semibold"
+        className="mb-28 text-center text-2xl font-semibold"
       >
         Projects
       </motion.h2>
