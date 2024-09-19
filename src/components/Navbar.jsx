@@ -8,6 +8,9 @@ import { GoPerson } from "react-icons/go";
 import { HiOutlinePresentationChartLine } from "react-icons/hi";
 import { BiSolidContact } from "react-icons/bi";
 import { motion } from "framer-motion";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RiCloseLargeFill } from "react-icons/ri";
+
 const Navbar = () => {
   // Dark Mode
   const [isDark, setIsDark] = useState(() => {
@@ -48,6 +51,7 @@ const Navbar = () => {
     };
   }, []);
 
+  // ScrollintoView
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -58,6 +62,8 @@ const Navbar = () => {
       });
     }
   };
+  // Mobile Menu Toggle
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
@@ -67,7 +73,7 @@ const Navbar = () => {
           isSticky
             ? "sticky-nav shadow-lg  dark:text-black backdrop-blur-lg"
             : ""
-        } flex items-center justify-between  mx-auto px-8 z-10 h-20 `}
+        } flex items-center justify-between mx-auto px-8 z-10 h-20 `}
       >
         <motion.div
           initial={{ opacity: 0, y: -100 }}
@@ -84,7 +90,7 @@ const Navbar = () => {
             className="size-28 mr-10 "
           />
         </motion.div>
-        <div className="flex items-center justify-center gap-10 m-1">
+        <div className="hidden items-center justify-center gap-10 m-1 lg:flex">
           <motion.button
             initial={{ opacity: 0, y: -100 }}
             animate={{
@@ -93,7 +99,7 @@ const Navbar = () => {
               transition: { delay: 0.4, duration: 1.5 },
             }}
             onClick={() => handleScroll("home")}
-            className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400"
+            className="relative link text-lg font-semibold justify-center px-5 items-center flex dark:hover:text-green-600 hover:text-green-400 "
           >
             <HiOutlineHome className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
             Home
@@ -154,7 +160,77 @@ const Navbar = () => {
             )}
           </motion.button>
         </div>
+        <div className="lg:hidden flex items-center">
+          <motion.button
+            initial={{ opacity: 0, y: -100 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { delay: 0.4, duration: 1.5 },
+            }}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? (
+              <RiCloseLargeFill className="text-4xl cursor-pointer lg:hidden" />
+            ) : (
+              <GiHamburgerMenu className="text-4xl cursor-pointer lg:hidden" />
+            )}
+          </motion.button>
+        </div>
       </nav>
+      {menuOpen && (
+        <motion.div
+          mode="wait"
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -100 }}
+          className="absolute top-20 left-0 w-full h-screen z-20"
+        >
+          <div className="text-xl font-bold  dark:text-white py-10 m-6 ">
+            <motion.div
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="lg:hidden flex flex-col items-center gap-6 bg-white dark:bg-gray-900 p-5 w-full rounded-3xl"
+            >
+              <button
+                onClick={() => handleScroll("home")}
+                className="relative link flex flex-row items-center text-lg font-semibold dark:hover:text-green-600 hover:text-green-400"
+              >
+                <HiOutlineHome className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
+                Home
+              </button>
+              <button
+                onClick={() => handleScroll("about")}
+                className="relative link  flex flex-row items-center text-lg font-semibold dark:hover:text-green-600 hover:text-green-400"
+              >
+                <GoPerson className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
+                About
+              </button>
+              <button
+                onClick={() => handleScroll("projects")}
+                className="relative link flex flex-row items-center text-lg font-semibold dark:hover:text-green-600 hover:text-green-400"
+              >
+                <HiOutlinePresentationChartLine className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
+                Works
+              </button>
+              <button
+                onClick={() => handleScroll("contact")}
+                className="relative link flex flex-row items-center text-lg font-semibold dark:hover:text-green-600 hover:text-green-400"
+              >
+                <BiSolidContact className="text-lg font-semibold flex items-center justify-center mr-1 mb-0.5" />
+                Contact
+              </button>
+              <button onClick={toggleTheme}>
+                {isDark ? (
+                  <MdDarkMode className="hover:cursor-pointer text-2xl" />
+                ) : (
+                  <LuSun className="hover:cursor-pointer text-2xl" />
+                )}
+              </button>
+            </motion.div>
+          </div>
+        </motion.div>
+      )}
     </>
   );
 };

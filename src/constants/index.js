@@ -44,7 +44,7 @@ export const PROJECTS = [
     image: project1,
     description:
       "A simple ToDoList Application built using React and styled with Tailwind CSS. It allows users to create, edit, and delete tasks, as well as mark tasks as completed.",
-    technologies: ["HTML", "React", "Tailwind"],
+    technologies: ["HTML", "React", "Tailwind", "React Router"],
   },
   {
     title: "D-Job Website",
