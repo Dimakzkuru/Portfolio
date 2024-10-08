@@ -57,11 +57,7 @@ const Hero = () => {
             }}
             className="flex justify-center"
           >
-            <img
-              src={heroPhoto}
-              alt="profilePic"
-              className="size-9/12 top-2 lg:ml-52"
-            />
+            <img src={heroPhoto} alt="profilePic" className="size-9/12 top-2" />
           </motion.div>
         </div>
       </div>

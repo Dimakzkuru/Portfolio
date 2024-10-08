@@ -58,9 +58,10 @@ const Navbar = () => {
       element.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
-        inline: "start",
+        inline: "nearest",
       });
     }
+    setMenuOpen(false);
   };
   // Mobile Menu Toggle
   const [menuOpen, setMenuOpen] = useState(false);
@@ -186,7 +187,7 @@ const Navbar = () => {
           exit={{ opacity: 0, y: -100 }}
           className="absolute top-20 left-0 w-full h-screen z-20"
         >
-          <div className="text-xl font-bold  dark:text-white py-10 m-6 ">
+          <div className="text-xl font-bold  dark:text-white text-black py-10 m-6 ">
             <motion.div
               initial={{ opacity: 0, y: -100 }}
               animate={{ opacity: 1, y: 0 }}
