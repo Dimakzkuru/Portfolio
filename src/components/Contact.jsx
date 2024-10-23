@@ -4,12 +4,13 @@ const Contact = () => {
   return (
     <div className="border-b border-neutral-900 pb-5">
       <motion.h1
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, x: 50 }}
         whileInView={{
           opacity: 1,
-          y: 0,
+          x: 0,
           transition: { delay: 0.9, duration: 1.2 },
         }}
+        viewport={{ once: true }}
         className="my-10 text-center  text-4xl"
       >
         Get in Touch
@@ -22,6 +23,7 @@ const Contact = () => {
             x: 0,
             transition: { delay: 0.9, duration: 0.9 },
           }}
+          viewport={{ once: true }}
           className="my-4"
         >
           {CONTACT.phoneNo}
@@ -33,6 +35,7 @@ const Contact = () => {
             x: 0,
             transition: { delay: 0.9, duration: 0.9 },
           }}
+          viewport={{ once: true }}
           className="my-4"
         >
           {CONTACT.email}
@@ -44,6 +47,7 @@ const Contact = () => {
             x: 0,
             transition: { delay: 0.9, duration: 0.9 },
           }}
+          viewport={{ once: true }}
           className="my-4"
         >
           {CONTACT.address}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { PiArrowFatLineUpFill } from "react-icons/pi";
+import { IoIosArrowDropupCircle } from "react-icons/io";
 import { motion } from "framer-motion";
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,9 +41,9 @@ const ScrollToTop = () => {
               repeatType: "reverse",
             },
           }}
-          className="fixed bottom-20 right-20 p-1.5 rounded-full shadow-lg"
+          className="fixed bottom-20 right-20 p-0 "
         >
-          <PiArrowFatLineUpFill className="text-3xl text-green-500 hover:text-green-600  size-10 " />
+          <IoIosArrowDropupCircle className="text-3xl text-black dark:text-white size-10 " />
         </motion.button>
       )}
     </div>

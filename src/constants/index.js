@@ -45,20 +45,27 @@ export const PROJECTS = [
     description:
       "A simple ToDoList Application built using React and styled with Tailwind CSS. It allows users to create, edit, and delete tasks, as well as mark tasks as completed.",
     technologies: ["HTML", "React", "Tailwind", "React Router"],
+    githubUrl: "https://github.com/Dimakzkuru/ToDoApp",
+    demoUrl: "https://dimakzkuru.github.io/ToDoApp/",
   },
+
   {
     title: "D-Job Website",
     image: project2,
     description:
       "This is a website project built to help job seekers connect with potential employers by providing a platform for job listings, applications, and related services.",
     technologies: ["HTML", "CSS", "Javascript"],
+    githubUrl: "https://github.com/Dimakzkuru/D-Job-Website",
+    demoUrl: "https://dimakzkuru.github.io/D-Job-Website/",
   },
   {
     title: "Portfolio Website",
     image: project3,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
+      "A personal portfolio website showcasing projects, skills, and contact information. Developed with React and Vite, styled using Tailwind CSS, and enhanced with Framer Motion for animations.",
     technologies: ["HTML", "React", "Tailwind", "Framer Motion"],
+    githubUrl: "https://github.com/Dimakzkuru/Portfolio",
+    demoUrl: "https://dimakzkuru.github.io/",
   },
 ];
 

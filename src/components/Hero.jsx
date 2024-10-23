@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="">
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2">
-          <div className="flex flex-col">
+          <div className="flex flex-col sm:content-center">
             <motion.span
               initial={{ opacity: 0, x: -100 }}
               whileInView={{
@@ -25,7 +25,7 @@ const Hero = () => {
                 x: 0,
                 transition: { delay: 1.1, duration: 0.8 },
               }}
-              className="pb-2 text-5xl font-bold tracking-tight lg:text-5xl"
+              className="pb-2 text-3xl font-bold tracking-tight lg:text-5xl text-center lg:text-left"
             >
               Hello, My Name is
               <br />
@@ -41,7 +41,7 @@ const Hero = () => {
                 x: 0,
                 transition: { delay: 1.4, duration: 0.8 },
               }}
-              className="mt-16 text-lg"
+              className="mt-16 lg:text-lg text-center lg:text-left text-sm"
             >
               {HERO_CONTENT}
             </motion.p>
@@ -57,7 +57,11 @@ const Hero = () => {
             }}
             className="flex justify-center"
           >
-            <img src={heroPhoto} alt="profilePic" className="size-9/12 top-2" />
+            <img
+              src={heroPhoto}
+              alt="profilePic"
+              className="lg:size-9/12 top-2 size-20 hidden lg:block"
+            />
           </motion.div>
         </div>
       </div>
