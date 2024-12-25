@@ -11,13 +11,17 @@ import { motion } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiCloseLargeFill } from "react-icons/ri";
 
-const Navbar = () => {
-  // Dark Mode
-  const [isDark, setIsDark] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme === "dark";
-  });
-  console.log(isDark);
+const Navbar = ({
+  isDark,
+  toggleTheme,
+  className,
+}: {
+  isDark: boolean;
+  toggleTheme: () => void;
+  className?: string;
+}) => {
+  // Checking Local Storage for a saved theme
+
   const [activeSection, setActiveSection] = useState("");
   //
   const [isManualScroll, setIsManualScroll] = useState(false);
@@ -26,25 +30,6 @@ const Navbar = () => {
   // Mobile Menu Toggle
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleTheme = () => {
-    const newTheme = !isDark ? "dark" : "light";
-    document.documentElement.classList.toggle("dark", !isDark);
-    localStorage.setItem("theme", newTheme);
-    setIsDark(!isDark);
-  };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
-      setIsDark(savedTheme === "dark");
-    } else {
-      // If no saved theme, default to light mode
-      document.documentElement.classList.remove("dark");
-      setIsDark(false); // light mode is the default
-      localStorage.setItem("theme", "light"); // Save default as 'light'
-    }
-  }, []);
   // Sticky Navigation Bar
   const [isSticky, setIsSticky] = useState(false);
   const navRef = useRef(null);
@@ -53,13 +38,13 @@ const Navbar = () => {
     const observer = new IntersectionObserver(([entry]) => {
       setIsSticky(!entry.isIntersecting);
     });
-    if (currentNav.current) {
-      observer.observe(currentNav.current);
+    if (navRef.current) {
+      observer.observe(navRef.current);
     }
 
     return () => {
-      if (currentNav.current) {
-        observer.unobserve(currentNav.current);
+      if (navRef.current) {
+        observer.unobserve(navRef.current);
       }
     };
   }, []);
@@ -73,8 +58,8 @@ const Navbar = () => {
         if (!isManualScroll) {
           // Only update active section if it's not a manual scroll
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(entry.target.id); // Update active section
+            if (entry.isIntersecting && activeSection !== entry.target.id) {
+              setActiveSection(entry.target.id);
             }
           });
         }
@@ -94,12 +79,12 @@ const Navbar = () => {
       });
     };
   }, [sections, isManualScroll]);
+
   // ScrollintoView
-  const handleScroll = (id) => {
+  const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       setIsManualScroll(true);
-
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -110,6 +95,7 @@ const Navbar = () => {
     //
     const scrollTimeout = setTimeout(() => {
       setIsManualScroll(false);
+      setActiveSection("");
     }, 1000);
 
     return () => clearTimeout(scrollTimeout);
@@ -121,7 +107,7 @@ const Navbar = () => {
       <nav
         className={`${
           isSticky
-            ? "sticky-nav shadow-lg  dark:text-white backdrop-blur-3xl backdrop-brightness-125 h-16"
+            ? "sticky-nav shadow-lg  dark:text-white backdrop-blur-sm backdrop-brightness-100 h-16"
             : ""
         } flex items-center justify-between mx-auto px-8 z-10 h-16 `}
       >
@@ -141,7 +127,7 @@ const Navbar = () => {
             className="lg:size-28 mr-10  size-24"
           />
         </motion.div>
-        <div className="hidden items-center justify-center gap-10 m-1 lg:flex">
+        <div className="hidden items-center justify-center lg:gap-8 gap-4 md:flex">
           {sections.map((section) => (
             <motion.button
               key={section}
@@ -152,10 +138,10 @@ const Navbar = () => {
                 transition: { delay: 0.4, duration: 1.5 },
               }}
               onClick={() => handleScroll(section)}
-              className={`relative link text-lg font-semibold justify-center px-5 items-center flex ${
+              className={`relative link lg:text-lg text-md font-semibold justify-center lg:px-4 md:px-2 items-center flex ${
                 activeSection === section
-                  ? "dark:text-green-600 text-green-400 link-active"
-                  : "dark:hover:text-green-600 hover:text-green-400"
+                  ? "dark:text-green-600 text-green-500 link-active"
+                  : "dark:hover:text-green-600 hover:text-green-500"
               }`}
             >
               {section === "home" && (
@@ -183,13 +169,13 @@ const Navbar = () => {
             onClick={toggleTheme}
           >
             {isDark ? (
-              <LuSun className="hover:cursor-pointer text-2xl" />
+              <LuSun className="hover:cursor-pointer lg:text-2xl md:text-xl" />
             ) : (
-              <MdDarkMode className="hover:cursor-pointer text-2xl transition duration-5000 ease-in-out" />
+              <MdDarkMode className="hover:cursor-pointer lg:text-2xl md:text-xl transition duration-5000 ease-in-out" />
             )}
           </motion.button>
         </div>
-        <div className="lg:hidden flex items-center z-100">
+        <div className="md:hidden flex items-center z-100">
           <motion.button
             initial={{ opacity: 0, y: -100 }}
             animate={{
@@ -202,14 +188,13 @@ const Navbar = () => {
             {menuOpen ? (
               ""
             ) : (
-              <GiHamburgerMenu className="md:text-3xl text-2xl cursor-pointer lg:hidden" />
+              <GiHamburgerMenu className="md:text-3xl text-2xl cursor-pointer md:hidden" />
             )}
           </motion.button>
         </div>
       </nav>
       {menuOpen && (
         <motion.div
-          mode="wait"
           initial={{ opacity: 0, x: -100 }}
           animate={{
             opacity: 1,
@@ -221,7 +206,7 @@ const Navbar = () => {
             x: -100,
             transition: { duration: 1, ease: "easeInOut" },
           }}
-          className="lg:hidden fixed lg:absolute h-full w-full z-50 top-0 left-0"
+          className="md:hidden fixed lg:absolute h-full w-full z-50 top-0 left-0"
         >
           <div className="text-xl font-bold dark:text-black text-white">
             <motion.div

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { IoIosArrowDropupCircle } from "react-icons/io";
 import { motion } from "framer-motion";
@@ -41,9 +42,9 @@ const ScrollToTop = () => {
               repeatType: "reverse",
             },
           }}
-          className="fixed bottom-20 right-20 p-0 "
+          className="fixed lg:bottom-20 lg:right-20 bottom-10 right-5"
         >
-          <IoIosArrowDropupCircle className="text-3xl text-black dark:text-white size-10 " />
+          <IoIosArrowDropupCircle className="text-3xl text-black dark:text-white lg:size-9 md:size-7" />
         </motion.button>
       )}
     </div>

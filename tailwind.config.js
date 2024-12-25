@@ -1,13 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  darkMode: "class", // Correctly set up dark mode
   theme: {
-    extend: {},
-  },
-  variants: {
     extend: {
       width: ["hover", "after"],
+      1.5: "3px",
       textColor: ["hover"],
     },
   },
@@ -22,17 +20,14 @@ export default {
             width: "0",
             left: "0",
             bottom: "-10px",
-            backgroundColor: "#35B855",
+            backgroundColor: "#80ff80",
             transition: "width 0.3s",
-          },
-          ".link:hover:after": {
-            width: "100%",
           },
           ".link-active:after": {
             width: "100%",
           },
         },
-        ["before", "after", "hover", "active"]
+        ["hover", "focus", "active"] // Updated variants
       );
     },
   ],

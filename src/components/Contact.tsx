@@ -1,8 +1,8 @@
-import { CONTACT } from "../constants";
+import { CONTACT } from "../constants/index.ts";
 import { motion } from "framer-motion";
 const Contact = () => {
   return (
-    <div className="border-b border-neutral-900 pb-5">
+    <div className=" pb-5">
       <motion.h1
         initial={{ opacity: 0, x: 50 }}
         whileInView={{
@@ -11,7 +11,7 @@ const Contact = () => {
           transition: { delay: 0.9, duration: 1.2 },
         }}
         viewport={{ once: true }}
-        className="my-10 text-center  text-4xl"
+        className="my-10 text-center  lg:text-4xl text-3xl"
       >
         Get in Touch
       </motion.h1>

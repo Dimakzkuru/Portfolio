@@ -1,4 +1,5 @@
-import { HERO_CONTENT } from "../constants/index.js";
+import React from "react";
+import { HERO_CONTENT } from "../constants/index.ts";
 import Type from "./Type.jsx";
 import heroPhoto from "../assets/HeroPhoto.png";
 import { motion } from "framer-motion";
@@ -41,7 +42,7 @@ const Hero = () => {
                 x: 0,
                 transition: { delay: 1.4, duration: 0.8 },
               }}
-              className="mt-16 lg:text-lg text-center lg:text-left text-sm"
+              className="mt-16 lg:text-lg text-justify  text-sm"
             >
               {HERO_CONTENT}
             </motion.p>
